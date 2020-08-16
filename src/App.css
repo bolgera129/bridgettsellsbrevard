@@ -1,4 +1,7 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+
+
+* {
   text-align: center;
 }
 
@@ -35,4 +38,116 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.margin20{
+  margin: 20px !important;
+}
+
+.justifyTextLeft{
+  text-align: left !important;
+}
+
+.margin10{
+  margin: 10px !important;
+}
+
+.socialMedia{
+  font-size: 30px;
+  color: cornflowerblue;
+}
+
+.socialMedia:hover{
+  color: black;
+}
+
+.marginLeft5{
+  margin-left: 5px;
+}
+
+#sliderLaber{
+  color: gray;
+}
+
+.marginTop30{
+  margin-top: 30px !important;
+}
+
+.marginBot20{
+  margin-bottom: 20px;
+}
+
+.width80{
+  width: 80%;
+}
+
+.margin5{
+  margin: 5px;
+}
+
+.padding5{
+  padding: 5px;
+}
+
+.marginBot30{
+  margin-bottom: 30px;
+}
+
+.paddingBot75{
+  padding-bottom: 75px;
+}
+
+.paddingTop75{
+  padding-top: 75;
+}
+
+    
+.marginTop100{
+      margin-top: 100px
+}
+
+
+.containerElement{
+  height: 600px;
+  width: max-content;
+}
+
+.mapElement{
+  height: 600px;
+  width: max-content;
+}
+
+.tab:hover{
+  background-color: lightgrey;
+}
+
+.sideBarNav{
+  position: absolute;
+  top: 30%;
+} 
+
+.city{
+  margin: 30px;
+}
+
+.school{
+  margin: 10px !important;
+}
+
+.actimg{
+  width: max-content;
+}
+
+.resources{
+  position: relative;
+  left: 20%;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.cardImg{
+  max-height: 300px;
 }
