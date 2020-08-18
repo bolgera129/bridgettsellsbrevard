@@ -10,6 +10,10 @@ import Typewriter from 'typewriter-effect';
 import useWindowDimensions from "../Utils/windowDimensions"
 import "./Billy_Ohio.ttf"
 import CrossfadeImage from "react-crossfade-image"
+import {Button} from "antd"
+
+import 'antd/dist/antd.css';
+
 
 
 export default function Home(props){
@@ -20,7 +24,7 @@ export default function Home(props){
     const [index, setIndex] = useState(0);
 
     function changeIndex(index){
-        if (index == 6){
+        if (index == 3){
             setIndex(0)
         }
         else{
@@ -28,8 +32,8 @@ export default function Home(props){
         }
     }
 
-    const largeImages = ["/assets/beach.png", "/assets/cb2.png", "/assets/cb3.png", "/assets/cv1.png", "/assets/kscVisitor.png", "/assets/mims.png", "/assets/viera.png"]
-    const smallImages = ["/assets/beach.png", "/assets/cb2.png", "/assets/surfer-surfboard-surfing-wave-royalty-free-thumbnail.jpg"]
+    const largeImages = ["/assets/lg2.jpg", "/assets/lg1.jpg", "/assets/lg3.jpg", "/assets/lg4.jpg"]
+    const smallImages = ["/assets/sm1.jpg", "/assets/sm2.jpg", "/assets/sm3.jpg","/assets/sm4.jpg", "/assets/sm5.jpg"]
 
 
     const words = ["Buyers","Sellers","Your Community","Your New Home"];
@@ -38,10 +42,10 @@ export default function Home(props){
 
     if (width < 786){
         Img = small
-        setTimeout(function(){ setImg(smallImages[index]); changeIndex(index) }, 4000);
+        setTimeout(function(){ setImg(smallImages[index]); changeIndex(index) }, 3000);
     }
     else{
-        setTimeout(function(){ setImg(largeImages[index]); changeIndex(index) }, 4000);
+        setTimeout(function(){ setImg(largeImages[index]); changeIndex(index) }, 3000);
     }
 
     return(
@@ -60,6 +64,12 @@ export default function Home(props){
                                 }}
                             /> */}
                         </div>
+                        <Button shape="circle" className = {css.bubble} ghost href = "/assets/buyerbook.pdf">
+                            Buyers
+                        </Button>
+                        <Button shape="circle" className = {css.bubbleR} ghost href = "/assets/sellerbook.pdf">
+                            Sellers
+                        </Button>
                 </Card.ImgOverlay>
             </Card>
             <AboutMe/>

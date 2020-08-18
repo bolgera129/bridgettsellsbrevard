@@ -2,23 +2,26 @@ import React,{useState} from "react"
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
-import Button from "react-bootstrap/Button"
 import FormGroup from "@material-ui/core/FormGroup"
 import TextField from "@material-ui/core/TextField"
 import Container from 'react-bootstrap/Container'
 import InputLabel from "@material-ui/core/InputLabel"
-import Select from "@material-ui/core/Select"
 import MenuItem from "@material-ui/core/MenuItem"
 import FormControl from "@material-ui/core/FormControl"
 import css from "./SearchForm.module.css"
 import Grid from "@material-ui/core/Grid"
 import SearchOutput from "./SearchOutput";
-import { CircularProgress, Checkbox, FormControlLabel, Radio, Divider } from "@material-ui/core";
+import { CircularProgress, FormControlLabel, Radio, List } from "@material-ui/core";
 import NavBar from "./NavBar";
 import Map from "./Map"
 import CustomSlider from "./CustomSlider";
-import { Dropdown, DropdownButton } from "react-bootstrap";
 import DropdownToggle from "react-bootstrap/DropdownToggle";
+import {Form} from "react-bootstrap"
+import {Select, Input, Menu, Dropdown, Checkbox, Divider, Button} from "antd"
+import { DownOutlined, UserOutlined } from '@ant-design/icons';
+
+import 'antd/dist/antd.css';
+
 
 export default function SearchForm(){
 
@@ -35,6 +38,8 @@ export default function SearchForm(){
     const [error, setError] = useState()
     const [minPrice, setMinPrice] = useState()
     const [maxPrice, setMaxPrice] = useState()
+    const [visible, setVisible] = useState(false)
+    const { Option } = Select;
 
     console.log(minPrice)
 
@@ -73,6 +78,8 @@ export default function SearchForm(){
             max = "";
         }
         else{max = "&price_max=" + maxPrice}
+
+        var min; 
         const forSaleUrl = "https://realtor.p.rapidapi.com/properties/v2/list-for-sale?sort=relavance&city=" + city + "&limit=200&state_code=FL&sqft_min=" + footage[0] + "&baths_min=" + bath + "&beds_min=" + bedrooms + "&features=" + features + "&price_min=" + minPrice + max + "&prop_type=" + type + "&sqft_max=" + footage[1];
        
         fetch('/apis/search',{
@@ -101,8 +108,167 @@ export default function SearchForm(){
         temp[1] = props
         setFootage(temp)
     }
+    function handleMenuClick(e){
+        if (e.key === '2') {
+          setVisible(false)
+        }
+      };
 
-    //console.log(properties)
+    function handleVisibleChange(flag){
+        setVisible(flag)
+      }
+    const menu = (
+<Grid container item fullWidth onClick={handleMenuClick}>
+                                <Grid container item lg = {6}> 
+                                <List component="nav">
+
+                                <Grid item lg = {12}>
+                                <div>
+                                        Min Price
+                                    </div>
+                                </Grid>
+                                <Divider/>
+                                <Grid item lg = {12}>
+                                        <Checkbox
+                                            checked={minPrice == "0"}
+                                            value="0"
+                                            onClick = { e => setMinPrice(e.target.value)}
+                                            color = "primary"
+                                        >
+                                            Any
+                                        </Checkbox>
+                                    </Grid>
+                                    <Divider/>
+                                    <Grid item lg = {12}>
+                                        <Checkbox
+                                            checked={minPrice == "100000"}
+                                            name="100k"
+                                            value="100000"
+                                            onClick = { e => setMinPrice(e.target.value)}
+                                            color = "primary"
+                                            >
+                                                $100,000
+                                            </Checkbox>
+                                    </Grid>
+                                    <Divider/>
+
+                                        <Grid item lg = {12}>
+                                        <Checkbox
+                                            checked={minPrice == "200000"}
+                                            name="200k"
+                                            value="200000"
+                                            onClick = { e => setMinPrice(e.target.value)}
+                                            color = "primary"
+                                            >
+                                                $200,000
+                                            </Checkbox>
+                                        </Grid>      
+                                        <Divider/>
+
+                                        <Grid item lg = {12}>
+                                        <Checkbox
+                                            checked={minPrice == "300000"}
+                                            name="300k"
+                                            value="300000"
+                                            onClick = { e => setMinPrice(e.target.value)}
+                                            color = "primary"
+                                        >
+                                            $300,000
+                                        </Checkbox>
+                                        </Grid>   
+                                        <Divider/>
+
+                                        <Grid item lg = {12}>
+                                        <Checkbox
+                                            checked={minPrice == "400000"}
+                                            name="400k"
+                                            value="400000"
+                                            onClick = { e => setMinPrice(e.target.value)}
+                                            color = "primary"
+                                            >
+                                                $400,000
+                                            </Checkbox>
+                                        </Grid>   
+                                        <Divider/>
+
+                                        </List>
+                                </Grid>
+                                <Grid item lg = {6}>
+                                    <List>
+                                    <Grid item lg = {12}>
+                                    <div>
+                                      Max Price
+                                    </div>
+                                    </Grid>  
+                                    <Divider/>
+                                    <Grid item lg = {12}>
+                                        <Checkbox
+                                            checked={maxPrice == "1000000"}
+                                            value="1000000"
+                                            onClick = { e => setMaxPrice(e.target.value)}
+                                            color = "primary"
+                                        > 
+                                        Any 
+                                        </Checkbox>
+                                    </Grid>
+                                    <Divider/>
+                                        <Grid item lg = {12}>
+                                        <Checkbox
+                                            checked={maxPrice == "200000"}
+                                            name="200k"
+                                            value="200000"
+                                            onClick = { e => setMaxPrice(e.target.value)}
+                                            color = "primary"
+                                        > 
+                                        $200,000 
+                                        </Checkbox>
+                                    </Grid>    
+                                    <Divider/>
+
+                                        <Grid> 
+                                                <Checkbox
+                                                    checked={maxPrice == "400000"}
+                                                    name="400k"
+                                                    value="400000"
+                                                    onClick = { e => setMaxPrice(e.target.value)}
+                                                    color = "primary"
+                                                >
+                                                    $400,000
+                                                </Checkbox>     
+                                        </Grid>
+                                        <Divider/>
+                                        <Grid> 
+                                                <Checkbox
+                                                    checked={maxPrice == "600000"}
+                                                    name="600k"
+                                                    value="600000"
+                                                    onClick = { e => setMaxPrice(e.target.value)}
+                                                    color = "primary"
+                                                >
+                                                    $600,000
+                                                </Checkbox>  
+                                        </Grid>
+                                        <Divider/>   
+                                        <Grid> 
+
+                                                <Checkbox
+                                                    checked={maxPrice == "800000"}
+                                                    name="800k"
+                                                    value="800000"
+                                                    onClick = { e => setMaxPrice(e.target.value)}
+                                                    color = "primary"
+                                                >
+                                                    $800,000
+                                                </Checkbox>  
+                                        </Grid>   
+                                        <Divider/>
+                                        </List>
+
+                                </Grid>
+                            </Grid>
+      );
+
+    console.log(city)
     return(
         <div>
             <NavBar bg="true"/>
@@ -115,281 +281,124 @@ export default function SearchForm(){
             </div>
             <Grid container spacing = {3}>
 
-                <Grid item xs = {12} lg = {2}>
-                    <FormControl className={classes.formControl} fullWidth = {true}>
-                    <InputLabel  className = "marginLeft5" >Cities</InputLabel>
-                                <Select
+                <Grid item xs = {12} lg = {3}>
+
+                            <Select
                                     value={city}
-                                    onChange={e => handleClick(e.target.value)}
+                                    onChange={val => setCity(val)}
                                     variant = "outlined"
-                                >
-                                    <MenuItem value = {"Melbourne"}> Melbourne</MenuItem>
-                                    <MenuItem value={"Merritt%20Island"}>Merritt Island</MenuItem>
-                                    <MenuItem value={"Cocoa%20Beach"}>Cocoa Beach</MenuItem>
-                                    <MenuItem value = {"Satellite%20Beach"}>Satellite Beach</MenuItem>
-                                    <MenuItem value = {"Titusville"}>Titusville</MenuItem>
-                                    <MenuItem value ={"Mims"}>Mims</MenuItem>
-                                    <MenuItem value ={"Cocoa"}>Cocoa</MenuItem>
-                                    <MenuItem value ={"Rockledge"}>Rockledge</MenuItem>
+                                    placeholder = "City"
+                                    style ={{width : "100%"}}
+                                    size="large"
+                            >                                
+                                    <Option value = {"Melbourne"}> Melbourne</Option>
+                                    <Option value={"Merritt%20Island"}>Merritt Island</Option>
+                                    <Option value={"Cocoa%20Beach"}>Cocoa Beach</Option>
+                                    <Option value = {"Satellite%20Beach"}>Satellite Beach</Option>
+                                    <Option value = {"Titusville"}>Titusville</Option>
+                                    <Option value ={"Mims"}>Mims</Option>
+                                    <Option value ={"Cocoa"}>Cocoa</Option>
+                                    <Option value ={"Rockledge"}>Rockledge</Option>
                                 </Select>   
-                    </FormControl>                  
                 </Grid>
-                <Grid item lg = {2} xs = {12}>
-                    <FormControl className={classes.formControl} fullWidth = {true}>
-                        <InputLabel className = "marginLeft5">Type</InputLabel>
+                <Grid item lg = {3} xs = {12}>
                             <Select
                                     value={type}
-                                    onChange={e => setType(e.target.value)}
-                                    variant = "outlined"
+                                    onChange={val => setType(val)}
+                                    placeholder = "Type"
+                                    size="large"
+                                    style ={{ width : "100%"}}
 
                                 >
-                                    <MenuItem value={"single_family"} >Single Family</MenuItem>
-                                    <MenuItem value={"multi_family"}>Multi Family</MenuItem>
-                                    <MenuItem value={"condo"}>Condo</MenuItem>
-                                    <MenuItem value={"mobile"}>Mobile</MenuItem>
-                                    <MenuItem value={"land"}>Land</MenuItem>
-                                    <MenuItem value={"farm"}>Farm</MenuItem>
+                                    <Option value={"single_family"} >Single Family</Option>
+                                    <Option value={"multi_family"}>Multi Family</Option>
+                                    <Option value={"condo"}>Condo</Option>
+                                    <Option value={"mobile"}>Mobile</Option>
+                                    <Option value={"land"}>Land</Option>
+                                    <Option value={"farm"}>Farm</Option>
                             </Select>                        
-                    </FormControl>  
                 </Grid>
-                <Grid item xs = {12} lg = {2}>
-                    <FormControl className={classes.formControl} fullWidth = {true}>
-                        <InputLabel  className = "marginLeft5">Features</InputLabel>
+                <Grid item xs = {12} lg = {3}>
                         <Select
                             value={features}
-                            onChange={e => setFeatures(e.target.value)}
-                            variant = "outlined"
-
+                            onChange={val => setFeatures(val)}
+                            placeholder = "Features"
+                            style ={{ width : "100%"}}
+                            size = "large"
                         >
-                            <MenuItem value={"pool"} >Pool</MenuItem>
-                            <MenuItem value={"waterfront"}>Waterfront</MenuItem>
+                            <Option value={"pool"} >Pool</Option>
+                            <Option value={"waterfront"}>Waterfront</Option>
                         </Select>                        
-                    </FormControl>
                 </Grid>
                 <Grid item xs ={12} lg = {3} >
-                    <FormControl className={classes.formControl} noValidate autoComplete="off " fullWidth = {true}>
-                    <TextField id="outlined-basic" label="Min Square Footage" variant = "outlined" onChange = {e => handleFootageChange(e.target.value)}/>
-                    </FormControl>
+                    <Input 
+                    placeholder="Min Square Footage"
+                    size = "large" 
+                    style = {{width:"100%"}}
+                    onChange = {val => handleFootageChange(val)}
+                    />
                 </Grid>
                 <Grid item xs ={12} lg = {3}>
-                    <FormControl className={classes.formControl} noValidate autoComplete="off" fullWidth = {true}>
-                    <TextField id="outlined-basic" label="Max Square Footage" variant = "outlined" onChange = {e => handleMaxFootageChange(e.target.value)}/>
-                    </FormControl>                
+                    <Input 
+                    placeholder="Max Square Footage" 
+                    onChange = {val => handleMaxFootageChange(val)}
+                    size = "large" 
+                    style = {{width:"100%"}}
+                    />
                 </Grid>
-                <Grid item xs = {12} lg = {2}>
-                    <FormControl className={classes.formControl} fullWidth = {true}>
-                        <InputLabel className = "marginLeft5">Bedrooms</InputLabel>
+                <Grid item xs = {12} lg = {3}>
                         <Select
                             value={bedrooms}
-                            onChange={e => setBedrooms(e.target.value)}
-                            variant = "outlined"
-
+                            onChange={val => setBedrooms(val)}
+                            placeholder = "Bedrooms"
+                            style ={{ width : "100%"}}
+                            size = "large"
                         >
-                            <MenuItem value={1}>1</MenuItem>
-                            <MenuItem value={2}>2</MenuItem>
-                            <MenuItem value={3}>3</MenuItem>
-                            <MenuItem value={4}>4</MenuItem>
-                            <MenuItem value={5}>5</MenuItem>
-                            <MenuItem value={6}>6</MenuItem>
-                            <MenuItem value={7}>7</MenuItem>
-                            <MenuItem value={8}>8</MenuItem>
-                            <MenuItem value={9}>9+</MenuItem>
+                            <Option value={1}>1</Option>
+                            <Option value={2}>2</Option>
+                            <Option value={3}>3</Option>
+                            <Option value={4}>4</Option>
+                            <Option value={5}>5</Option>
+                            <Option value={6}>6</Option>
+                            <Option value={7}>7</Option>
+                            <Option value={8}>8</Option>
+                            <Option value={9}>9+</Option>
                         </Select>                        
-                    </FormControl> 
                 </Grid>
-                <Grid item xs = {12} lg ={2}>
-                    <FormControl className = {classes.formControl} fullWidth = {true}>
-                    <InputLabel  className = "marginLeft5" >Bathrooms</InputLabel>
+                <Grid item xs = {12} lg ={3}>
+
                     <Select
                         value={bath}
-                        onChange={e => setBaths(e.target.value)}
-                        variant = "outlined"
-
+                        onChange={val => setBaths(val)}
+                        placeholder = "Bathrooms"
+                        style ={{ width : "100%"}}
+                        size = "large"
                     >
-                        <MenuItem value={1}>1</MenuItem>
-                        <MenuItem value={2}>2</MenuItem>
-                        <MenuItem value={3}>3</MenuItem>
-                        <MenuItem value={4}>4</MenuItem>
-                        <MenuItem value={5}>5</MenuItem>
-                        <MenuItem value={6}>6</MenuItem>
-                        <MenuItem value={7}>7</MenuItem>
-                        <MenuItem value={8}>8</MenuItem>
-                        <MenuItem value={9}>9+</MenuItem>
-                    </Select>    
-                    </FormControl>                         
+                        <Option value={1}>1</Option>
+                        <Option value={2}>2</Option>
+                        <Option value={3}>3</Option>
+                        <Option value={4}>4</Option>
+                        <Option value={5}>5</Option>
+                        <Option value={6}>6</Option>
+                        <Option value={7}>7</Option>
+                        <Option value={8}>8</Option>
+                        <Option value={9}>9+</Option>
+                    </Select>                          
                 </Grid>  
-                <Grid  item lg ={8} xs = {12}> 
-                <DropdownButton variant = "outline-secondary" title = "Price" size = "md" className={classes.formControl} fullWidth = {true}>
-                            <Grid container item>
-                                <Grid container item lg = {6}> 
-                                <Grid item lg = {12}>
-                                <div>
-                                        Minimum Price
-                                    </div>
-                                </Grid>
-                                <Grid item lg = {12}>
-                                    <FormControlLabel
-                                        control={
-                                        <Checkbox
-                                            checked={minPrice == "100000"}
-                                            name="100k"
-                                            value="0"
-                                            onClick = { e => setMinPrice(e.target.value)}
-                                            color = "primary"
-                                        />
-                                        }
-                                        label="Any"
-                                    />    
-                                    </Grid>
-                                    <Grid item lg = {12}>
-                                    <FormControlLabel
-                                        control={
-                                        <Checkbox
-                                            checked={minPrice == "100000"}
-                                            name="100k"
-                                            value="100000"
-                                            onClick = { e => setMinPrice(e.target.value)}
-                                            color = "primary"
-                                        />
-                                        }
-                                        label="$ 100,000"
-                                    />    
-                                    </Grid>
-                                        <Grid item lg = {12}>
-                                        <FormControlLabel
-                                        control={
-                                        <Checkbox
-                                            checked={minPrice == "20000"}
-                                            name="200k"
-                                            value="200000"
-                                            onClick = { e => setMinPrice(e.target.value)}
-                                            color = "primary"
-                                        />
-                                        }
-                                        label="$ 200,000"
-                                    />  
-                                        </Grid>      
-                                        <Grid item lg = {12}>
-                                        <FormControlLabel
-                                        control={
-                                        <Checkbox
-                                            checked={minPrice == "300000"}
-                                            name="300k"
-                                            value="300000"
-                                            onClick = { e => setMinPrice(e.target.value)}
-                                            color = "primary"
-                                        />
-                                        }
-                                        label="$ 300,000"
-                                    />  
-                                        </Grid>   
-                                        <Grid item lg = {12}>
-                                        <FormControlLabel
-                                        control={
-                                        <Checkbox
-                                            checked={minPrice == "400000"}
-                                            name="400k"
-                                            value="400000"
-                                            onClick = { e => setMinPrice(e.target.value)}
-                                            color = "primary"
-                                        />
-                                        }
-                                        label="$ 400,000"
-                                    />  
-                                        </Grid>   
-                                </Grid>
-                                <Grid item lg = {6}>
-                                    <Grid item lg = {12}>
-                                    <div>
-                                      Maximum Price
-                                    </div>
-                                    <Grid item lg = {12}>
-                                        <FormControlLabel
-                                        control={
-                                        <Checkbox
-                                            checked={maxPrice == "1000000"}
-                                            name="200k"
-                                            value="1000000"
-                                            onClick = { e => setMaxPrice(e.target.value)}
-                                            color = "primary"
-                                        />
-                                        }
-                                        label="Any"
-                                    />  
-                                    </Grid>  
-                                    </Grid>
-                                        <Grid item lg = {12}>
-                                        <FormControlLabel
-                                        control={
-                                        <Checkbox
-                                            checked={maxPrice == "200000"}
-                                            name="200k"
-                                            value="200000"
-                                            onClick = { e => setMaxPrice(e.target.value)}
-                                            color = "primary"
-                                        />
-                                        }
-                                        label="$ 100,000"
-                                    />  
-                                    </Grid>    
-                                        <Grid> 
-                                            <FormControlLabel
-                                                control={
-                                                <Checkbox
-                                                    checked={maxPrice == "400000"}
-                                                    name="400k"
-                                                    value="400000"
-                                                    onClick = { e => setMaxPrice(e.target.value)}
-                                                    color = "primary"
-                                                />
-                                                }
-                                                label="$ 400,000"
-                                            />      
-                                        </Grid>
-                                        <Grid> 
-                                            <FormControlLabel
-                                                control={
-                                                <Checkbox
-                                                    checked={maxPrice == "600000"}
-                                                    name="600k"
-                                                    value="600000"
-                                                    onClick = { e => setMaxPrice(e.target.value)}
-                                                    color = "primary"
-                                                />
-                                                }
-                                                label="$ 600,000"
-                                            />      
-                                        </Grid>   
-                                        <Grid> 
-                                            <FormControlLabel
-                                                control={
-                                                <Checkbox
-                                                    checked={maxPrice == "800000"}
-                                                    name="800k"
-                                                    value="800000"
-                                                    onClick = { e => setMaxPrice(e.target.value)}
-                                                    color = "primary"
-                                                />
-                                                }
-                                                label="$ 800,000"
-                                            />      
-                                        </Grid>   
-                                          
-                                </Grid>
-                            </Grid>
-                </DropdownButton>
+                <Grid  item lg ={3} xs = {12} fullWidth> 
+                <Dropdown overlay={menu} visible = {visible} onVisibleChange={handleVisibleChange}>
+                    <Button size = "large" style = {{width: "100%"}} id = {css.price} placeholder = "Price" >
+                        Price <DownOutlined id = {css.toggle}/>
+                    </Button>
+                </Dropdown>
                 </Grid>              
                 </Grid>
-                <div id = {css.searchButton}>
-                    {properties.length === 0 && clicked ? 
-                    <CircularProgress/>
-                    :           
-                    <Button onClick = {fetchProperties} variant = "outline-dark">
+         
+                    <Button onClick = {fetchProperties} variant = "outline-dark" size = "large" loading = {properties.length === 0 && clicked} className="marginTop30">
                         Search
-                    </Button>}                
-                </div> 
+                    </Button>               
             </Container>
-            <Map properties = {properties}/>
+            {/* <Map properties = {properties}/> */}
             {properties.length > 0 ? <SearchOutput properties = {properties}/> : <div> {error} </div> }
             </div>
         </div>

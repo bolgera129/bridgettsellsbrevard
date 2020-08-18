@@ -42,13 +42,13 @@
         position: absolute;
         color: white;
         text-align: center;
-        top: 10%;
+        top: 5%;
         justify-content: center;
         left: -0%;
         right: 0%;
-        font-weight: lighter;
+        font-weight: 100;
         font-family: 'BillyOhio';
-        font-size: 100px;
+        font-size: 175px;
         width: 100%;
     }
 }
@@ -62,4 +62,46 @@
 #animation{
     animation-duration: 500ms;
     /* animation-iteration-count: 4; */
+}
+
+.bubble{
+    width: 300px;
+    height: 300px !important;
+    font-family: "BillyOhio";
+    position: relative;
+    top: 500px;
+    left: -400px;
+    opacity: 1;
+    background-color: transparent;
+
+}
+
+.bubble span{
+    font-size: 100px;
+    padding-top: 45%
+}
+
+.bubbleR{
+    width: 300px;
+    height: 300px !important;
+    font-family: "BillyOhio";
+    position: relative;
+    top: 500px;
+    right: -400px;
+    opacity: 1;
+    background-color: transparent;
+}
+
+.bubbleR span{
+    font-size: 100px;
+    padding-top: 45%;
+}
+
+.bubble:hover{
+    background-color: white !important;
+}
+
+
+.bubbleR:hover{
+    background-color: white !important;
 }

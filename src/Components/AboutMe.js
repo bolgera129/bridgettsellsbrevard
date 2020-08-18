@@ -17,10 +17,7 @@ export default function AboutMe(){
                 </Grid>
                 <Grid container item lg = {8} sm ={12} md = {9} className = "marginTop30 justify-content-center">
                     <div className = "width80">
-                        <h1>
-                            My Story
-                        </h1>
-                        <p>
+                        <p style = {{fontSize: "30px", paddingTop:"15%"}}>
                            Meet Bridgett Stuhlmiller!  A real estate agent with a love for life, the Space Coast, and making her clients her number one priority!
                         </p>                        
                     </div>
@@ -34,7 +31,7 @@ export default function AboutMe(){
                 <HomeCardGroup/>
             </div> */}
         </div>    
-        <div id = "contact" className = "marginTop30 paddingBot75 paddingTop75">
+        <div id = "contact" className = "marginTop60 paddingBot75 paddingTop75">
             <h3>
                 Contact Me
             </h3>
