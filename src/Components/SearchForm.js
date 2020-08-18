@@ -398,7 +398,7 @@ export default function SearchForm(){
                         Search
                     </Button>               
             </Container>
-            {/* <Map properties = {properties}/> */}
+            <Map properties = {properties}/>
             {properties.length > 0 ? <SearchOutput properties = {properties}/> : <div> {error} </div> }
             </div>
         </div>
