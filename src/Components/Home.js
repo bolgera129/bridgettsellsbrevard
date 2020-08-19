@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from "react"
-import publicUrl from "./../Utils/publicUrl"
 import NavBar from "./NavBar"
 import css from "./Home.module.css"
 import Card from "react-bootstrap/Card"
-import SearchForm from "./SearchForm"
 import AboutMe from "./AboutMe"
-import Contact from "Contact"
-import Typewriter from 'typewriter-effect';
 import useWindowDimensions from "../Utils/windowDimensions"
 import "./Billy_Ohio.ttf"
-import CrossfadeImage from "react-crossfade-image"
 import {Button} from "antd"
 
 import 'antd/dist/antd.css';
@@ -24,13 +19,15 @@ export default function Home(props){
     const [images, setImages] = useState([])
 
     function changeIndex(index){
-        if (index == 4){
+        if (index === 4){
             setIndex(0)
         }
         else{
             setIndex(index + 1)
         }
     }
+    const largeImages = ["/assets/lg2.jpg", "/assets/lg1.jpg", "/assets/lg3.jpg", "/assets/lg4.jpg"]
+    const smallImages = ["/assets/sm1.jpg", "/assets/sm2.jpg", "/assets/sm3.jpg","/assets/sm4.jpg", "/assets/sm5.jpg"]
 
     useEffect(()=>{
         if (width < 786){
@@ -39,10 +36,9 @@ export default function Home(props){
         else{
             setImages(largeImages)
         }
-    })
+    },[width, largeImages, smallImages])
 
-    const largeImages = ["/assets/lg2.jpg", "/assets/lg1.jpg", "/assets/lg3.jpg", "/assets/lg4.jpg"]
-    const smallImages = ["/assets/sm1.jpg", "/assets/sm2.jpg", "/assets/sm3.jpg","/assets/sm4.jpg", "/assets/sm5.jpg"]
+
 
     if (width < 786){
         setTimeout(function(){ changeIndex(index) }, 3000);

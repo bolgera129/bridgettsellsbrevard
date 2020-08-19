@@ -1,7 +1,5 @@
 import React, { useState} from "react"
 import Container from "react-bootstrap/Container"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import {faFacebook, faInstagram,faTwitter} from "@fortawesome/free-brands-svg-icons"
 import Grid from "@material-ui/core/Grid"
 import TextField from "@material-ui/core/TextField"
 import Button from "react-bootstrap/Button"
@@ -29,10 +27,8 @@ export default function Contact(props){
           .then(res => res.json())
           .then(data => {
             if (data.success) {
-                console.log("Success");
                 }
              else {
-                console.log("Error");
             }
           });
           React.useRef.current = setTimeout(() => {

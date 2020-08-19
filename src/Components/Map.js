@@ -19,7 +19,6 @@ function Map(props) {
   else{
     properties = false
   }
-  console.log(properties)
    const GoogleMapExample = withGoogleMap(props => (
       <GoogleMap
         defaultCenter = { { lat: 28.2639, lng: -80.7214 } }

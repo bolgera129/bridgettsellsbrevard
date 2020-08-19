@@ -10,3 +10,18 @@
 /* .cardBox{
     height: 500px;
 } */
+
+.property{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.property:hover{
+    background-color:transparent;
+    border-color: transparent;
+}
+
+
+.propertyText{
+    color: black;
+}

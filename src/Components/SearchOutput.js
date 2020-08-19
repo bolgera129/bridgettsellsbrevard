@@ -27,7 +27,6 @@ export default function SearchOutput(props){
         currency: 'USD',
       });
       const properties = props.properties;
-      console.log(properties)
       
     return(
         <Container id ={css.outputCont}>
@@ -59,14 +58,14 @@ export default function SearchOutput(props){
 
     {properties.map(p =>
             <Grid lg = {4} xs = {12} md = {12} onClick = {open}>
-                    <a onClick = {handleClickOpen}>
+                    <Button onClick = {handleClickOpen} ghost className = {css.property}>
 
                 <div className = "margin10">
                     <Card className = {css.card}>
                         <Card.Img variant="top" src={p.thumbnail} className = "cardImg" />
                         <Card.Body>
-                        <Card.Title>{formatter.format(p.price)}</Card.Title>
-                        <Card.Text>                        
+                        <Card.Title className = {css.propertyText}>{formatter.format(p.price)}</Card.Title>
+                        <Card.Text className = {css.propertyText}>                        
                             {p.address.line + " " +  p.address.city + " " + p.address.postal_code}
                         </Card.Text>
                         </Card.Body>
@@ -77,7 +76,7 @@ export default function SearchOutput(props){
                         </Card.Footer>
                     </Card>                  
                 </div>           
-                </a>       
+                </Button>       
                     
             </Grid>     
         )}

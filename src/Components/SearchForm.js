@@ -1,24 +1,13 @@
 import React,{useState} from "react"
-import { makeStyles, withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Slider from '@material-ui/core/Slider';
-import FormGroup from "@material-ui/core/FormGroup"
-import TextField from "@material-ui/core/TextField"
 import Container from 'react-bootstrap/Container'
-import InputLabel from "@material-ui/core/InputLabel"
-import MenuItem from "@material-ui/core/MenuItem"
-import FormControl from "@material-ui/core/FormControl"
 import css from "./SearchForm.module.css"
 import Grid from "@material-ui/core/Grid"
 import SearchOutput from "./SearchOutput";
-import { CircularProgress, FormControlLabel, Radio, List } from "@material-ui/core";
+import { List } from "@material-ui/core";
 import NavBar from "./NavBar";
 import Map from "./Map"
-import CustomSlider from "./CustomSlider";
-import DropdownToggle from "react-bootstrap/DropdownToggle";
-import {Form} from "react-bootstrap"
-import {Select, Input, Menu, Dropdown, Checkbox, Divider, Button} from "antd"
-import { DownOutlined, UserOutlined } from '@ant-design/icons';
+import {Select, Input, Dropdown, Checkbox, Divider, Button} from "antd"
+import { DownOutlined } from '@ant-design/icons';
 
 import 'antd/dist/antd.css';
 
@@ -27,7 +16,6 @@ export default function SearchForm(){
 
 
     const [city, setCity] = useState();
-    const [price, setPrice] = useState([0, 400000]);
     const [properties,setProperties] = useState([])
     const [footage, setFootage] = useState([0,10000000]);
     const [type,setType] = useState([])
@@ -41,34 +29,6 @@ export default function SearchForm(){
     const [visible, setVisible] = useState(false)
     const { Option } = Select;
 
-    console.log(minPrice)
-
-    const useStyles = makeStyles((theme) => ({
-        formControl: {
-          margin: theme.spacing(.5),
-          minWidth: 120
-        },
-        selectEmpty: {
-          marginTop: theme.spacing(1),
-        },
-      }));
-
-
-      
-      
-      
-
-        const classes = useStyles();
-      
-        const handlePrice = (event, newValue) => {
-          setPrice(newValue);
-          
-        };
-
-
-    function handleClick(props){
-        setCity(props);
-    }
 
     function fetchProperties(props){    
 
@@ -79,7 +39,6 @@ export default function SearchForm(){
         }
         else{max = "&price_max=" + maxPrice}
 
-        var min; 
         const forSaleUrl = "https://realtor.p.rapidapi.com/properties/v2/list-for-sale?sort=relavance&city=" + city + "&limit=200&state_code=FL&sqft_min=" + footage[0] + "&baths_min=" + bath + "&beds_min=" + bedrooms + "&features=" + features + "&price_min=" + minPrice + max + "&prop_type=" + type + "&sqft_max=" + footage[1];
        
         fetch('/apis/search',{
@@ -130,7 +89,7 @@ export default function SearchForm(){
                                 <Divider/>
                                 <Grid item lg = {12}>
                                         <Checkbox
-                                            checked={minPrice == "0"}
+                                            checked={minPrice === "0"}
                                             value="0"
                                             onClick = { e => setMinPrice(e.target.value)}
                                             color = "primary"
@@ -141,7 +100,7 @@ export default function SearchForm(){
                                     <Divider/>
                                     <Grid item lg = {12}>
                                         <Checkbox
-                                            checked={minPrice == "100000"}
+                                            checked={minPrice === "100000"}
                                             name="100k"
                                             value="100000"
                                             onClick = { e => setMinPrice(e.target.value)}
@@ -154,7 +113,7 @@ export default function SearchForm(){
 
                                         <Grid item lg = {12}>
                                         <Checkbox
-                                            checked={minPrice == "200000"}
+                                            checked={minPrice === "200000"}
                                             name="200k"
                                             value="200000"
                                             onClick = { e => setMinPrice(e.target.value)}
@@ -167,7 +126,7 @@ export default function SearchForm(){
 
                                         <Grid item lg = {12}>
                                         <Checkbox
-                                            checked={minPrice == "300000"}
+                                            checked={minPrice === "300000"}
                                             name="300k"
                                             value="300000"
                                             onClick = { e => setMinPrice(e.target.value)}
@@ -180,7 +139,7 @@ export default function SearchForm(){
 
                                         <Grid item lg = {12}>
                                         <Checkbox
-                                            checked={minPrice == "400000"}
+                                            checked={minPrice === "400000"}
                                             name="400k"
                                             value="400000"
                                             onClick = { e => setMinPrice(e.target.value)}
@@ -203,7 +162,7 @@ export default function SearchForm(){
                                     <Divider/>
                                     <Grid item lg = {12}>
                                         <Checkbox
-                                            checked={maxPrice == "1000000"}
+                                            checked={maxPrice === "1000000"}
                                             value="1000000"
                                             onClick = { e => setMaxPrice(e.target.value)}
                                             color = "primary"
@@ -214,7 +173,7 @@ export default function SearchForm(){
                                     <Divider/>
                                         <Grid item lg = {12}>
                                         <Checkbox
-                                            checked={maxPrice == "200000"}
+                                            checked={maxPrice === "200000"}
                                             name="200k"
                                             value="200000"
                                             onClick = { e => setMaxPrice(e.target.value)}
@@ -227,7 +186,7 @@ export default function SearchForm(){
 
                                         <Grid> 
                                                 <Checkbox
-                                                    checked={maxPrice == "400000"}
+                                                    checked={maxPrice === "400000"}
                                                     name="400k"
                                                     value="400000"
                                                     onClick = { e => setMaxPrice(e.target.value)}
@@ -239,7 +198,7 @@ export default function SearchForm(){
                                         <Divider/>
                                         <Grid> 
                                                 <Checkbox
-                                                    checked={maxPrice == "600000"}
+                                                    checked={maxPrice === "600000"}
                                                     name="600k"
                                                     value="600000"
                                                     onClick = { e => setMaxPrice(e.target.value)}
@@ -252,7 +211,7 @@ export default function SearchForm(){
                                         <Grid> 
 
                                                 <Checkbox
-                                                    checked={maxPrice == "800000"}
+                                                    checked={maxPrice === "800000"}
                                                     name="800k"
                                                     value="800000"
                                                     onClick = { e => setMaxPrice(e.target.value)}
@@ -268,7 +227,6 @@ export default function SearchForm(){
                             </Grid>
       );
 
-    console.log(city)
     return(
         <div>
             <NavBar bg="true"/>

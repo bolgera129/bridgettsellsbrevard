@@ -1,8 +1,6 @@
 import React from "react"
 import Image from "react-bootstrap/Image"
 import css from "./AboutMe.module.css"
-import NavBar from "./NavBar";
-import HomeCardGroup from "./HomeCardGroup"
 import Contact from "../Contact";
 import { Grid } from "@material-ui/core";
 
