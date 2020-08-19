@@ -17,7 +17,7 @@ export default function Contact(props){
 
     function addEmail(props){
       setSubmitting(true)
-          fetch('/api/messages', {
+          fetch('messages', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

@@ -41,7 +41,7 @@ export default function SearchForm(){
 
         const forSaleUrl = "https://realtor.p.rapidapi.com/properties/v2/list-for-sale?sort=relavance&city=" + city + "&limit=200&state_code=FL&sqft_min=" + footage[0] + "&baths_min=" + bath + "&beds_min=" + bedrooms + "&features=" + features + "&price_min=" + minPrice + max + "&prop_type=" + type + "&sqft_max=" + footage[1];
        
-        fetch('/apis/search',{
+        fetch('search',{
             method : 'POST',
             headers: {
               'Content-Type': 'application/json'
