@@ -14,7 +14,6 @@
         "unirest": "^0.6.0",
         "request": "^2.88.2"
     },
-    "proxy": "http://localhost:8080",
     "scripts": {
       "start": "react-scripts start",
       "build": "react-scripts build",
