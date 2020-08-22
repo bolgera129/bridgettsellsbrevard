@@ -13,9 +13,8 @@ exports.handler = (event,context,callback) => {
       }
     };
 
-    request(options, function (error, response, body) {
-      if (error) throw new Error(error);
-      console.log(JSON.parse(body))
-      return(JSON.parse(body));
-    });
-  }
+    return (request(options, function (error, response, body) {
+       let body = JSON.parse(body)
+        return(body)
+    }));
+}
