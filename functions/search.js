@@ -16,5 +16,7 @@ exports.handler = async (event,context,callback) => {
     await (request(options, function (error, response, body) {
        result = JSON.parse(body)
     }));
-    return(result)
+    console.log(result);
+    
+    return callback(result)
 }
