@@ -17,7 +17,7 @@ export default function Contact(props){
 
     function addEmail(props){
       setSubmitting(true)
-          fetch('messages', {
+          fetch('https://www.bridgettsellsbrevard.com/.netlify/functions/messages', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
