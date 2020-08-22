@@ -4,7 +4,7 @@ exports.handler = (event,context,callback) => {
   console.log(event)
     var options = {
       method: 'GET',
-      uri: event.queryStringParameters.url,
+      uri: event.body.url,
       headers: {
         'x-rapidapi-host': 'realtor.p.rapidapi.com',
         'x-rapidapi-key': process.env.REACT_APP_API_KEY,
