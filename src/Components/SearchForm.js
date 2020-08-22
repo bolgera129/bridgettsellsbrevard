@@ -54,7 +54,6 @@ export default function SearchForm(){
             if (r.properties.length > 0 ){setProperties(r.properties)}
             else{ setError(r); setClicked(false)}
         })
-        .catch((error) => {setError(Error); setClicked(false)})
     }
 
     function handleFootageChange(props){
