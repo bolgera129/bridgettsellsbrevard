@@ -1,9 +1,10 @@
 var request = require("request");
 
 exports.handler = (event,context,callback) => {
+  console.log(event)
     var options = {
       method: 'GET',
-      url: event.queryStringParameters.url,
+      uri: event.queryStringParameters.url,
       headers: {
         'x-rapidapi-host': 'realtor.p.rapidapi.com',
         'x-rapidapi-key': process.env.REACT_APP_API_KEY,
@@ -14,6 +15,6 @@ exports.handler = (event,context,callback) => {
     request(options, function (error, response, body) {
       if (error) throw new Error(error);
     
-      callback(body);
+      return(body);
     });
   }

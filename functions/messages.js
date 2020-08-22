@@ -10,7 +10,6 @@ const twilio = new TwilioSdk(accountSid, authToken)
 // use twilio SDK to send text message https://www.twilio.com/docs/libraries/node
 exports.handler = (event, context, callback) => {
   const body = JSON.parse(event.body)
-  console.log(body)
   const sms = {
     to: process.env.TWILIO_PHONE_NUMBER,
     body: "name :" + body.text.name + " email: " + body.text.email + " message: " + body.text.message,
