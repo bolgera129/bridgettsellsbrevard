@@ -357,7 +357,7 @@ export default function SearchForm(){
                         Search
                     </Button>               
             </Container>
-            <Map properties = {properties}/>
+            <Map properties = {properties} style = {{marginTop : "30px"}}/>
             {properties.length > 0 ? <SearchOutput properties = {properties}/> : <div> {error} </div> }
             </div>
         </div>

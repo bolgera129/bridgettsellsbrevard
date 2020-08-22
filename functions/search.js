@@ -15,7 +15,7 @@ exports.handler = (event,context,callback) => {
 
     request(options, function (error, response, body) {
       if (error) throw new Error(error);
-      console.log(body)
-      return(body);
+      console.log(JSON.parse(body))
+      return(JSON.parse(body));
     });
   }
