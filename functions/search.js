@@ -1,7 +1,7 @@
 var request = require("request");
 
 exports.handler = (event,context,callback) => {
-  console.log(event)
+  console.log(event.body.url)
     var options = {
       method: 'GET',
       uri: event.body.url,
