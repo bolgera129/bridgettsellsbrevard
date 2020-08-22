@@ -1,0 +1,27 @@
+#outputCont{
+    padding-top: 50px;
+}
+
+.card{
+    padding: 10px;
+    height: 450px !important;
+}
+
+/* .cardBox{
+    height: 500px;
+} */
+
+.property{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.property:hover{
+    background-color:transparent;
+    border-color: transparent;
+}
+
+
+.propertyText{
+    color: black;
+}
