@@ -13,8 +13,7 @@ exports.handler = async (event,context,callback) => {
       }
     };
     var result = await request(options, function (error, response, body) {
-       result = JSON.parse(body)
-       return result
+      return  JSON.parse(body)
     });
     console.log(result)
     return result
