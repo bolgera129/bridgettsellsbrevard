@@ -1,6 +1,6 @@
 var request = require("request");
 
-exports.handler = (event,context,callback) => {
+exports.handler = async (event,context,callback) => {
   const body = JSON.parse(event.body)
   console.log(body.url)
     var options = {
@@ -12,9 +12,9 @@ exports.handler = (event,context,callback) => {
         useQueryString: true
       }
     };
-
-    return (request(options, function (error, response, body) {
-       let result = JSON.parse(body)
-        return(result)
+    var result;
+    await (request(options, function (error, response, body) {
+       result = JSON.parse(body)
     }));
+    return(result)
 }
