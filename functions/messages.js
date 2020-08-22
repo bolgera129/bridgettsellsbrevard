@@ -13,7 +13,7 @@ exports.handler = (event, context, callback) => {
   console.log(body)
   const sms = {
     to: process.env.TWILIO_PHONE_NUMBER,
-    body: "name :" + body.name + " email: " + body.email + " message: " + body.message,
+    body: "name :" + body.text.name + " email: " + body.text.email + " message: " + body.text.message,
     from: +19549519782,
   }
 
