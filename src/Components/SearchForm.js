@@ -52,7 +52,7 @@ export default function SearchForm(){
         .then(r => {
             console.log(r)
             if (r.properties.length > 0 ){setProperties(r.properties)}
-            else{ setError("There are no properties with these features."); setClicked(false)}
+            else{ setError(r); setClicked(false)}
         })
         .catch((error) => {setError("There was an error loading your future home."); setClicked(false)})
     }
