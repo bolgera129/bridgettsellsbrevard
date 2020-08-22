@@ -352,7 +352,7 @@ export default function SearchForm(){
                 </Grid>              
                 </Grid>
          
-                    <Button onClick = {fetchProperties} variant = "outline-dark" size = "large" loading = {properties.length === 0 && clicked} className="marginTop30">
+                    <Button onClick = {fetchProperties} variant = "outline-dark" size = "large" loading = {properties.length === 0 && clicked} style = {{marginTop : "30px"}}>
                         Search
                     </Button>               
             </Container>
