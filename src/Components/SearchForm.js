@@ -50,6 +50,7 @@ export default function SearchForm(){
         })
         .then(r => r.json())
         .then(r => {
+            console.log(r)
             if (r.properties.length > 0 ){setProperties(r.properties)}
             else{ setError("There are no properties with these features."); setClicked(false)}
         })
