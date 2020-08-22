@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import NavBar from "./NavBar"
 import css from "./Home.module.css"
 import Card from "react-bootstrap/Card"
@@ -16,7 +16,6 @@ export default function Home(props){
     const { height, width } = useWindowDimensions();
 
     const [index, setIndex] = useState(0);
-    const [images, setImages] = useState([])
 
     function changeIndex(index){
         if (index === 4){
@@ -29,15 +28,13 @@ export default function Home(props){
     const largeImages = ["/assets/lg2.jpg", "/assets/lg1.jpg", "/assets/lg3.jpg", "/assets/lg4.jpg"]
     const smallImages = ["/assets/sm1.jpg", "/assets/sm2.jpg", "/assets/sm3.jpg","/assets/sm4.jpg", "/assets/sm5.jpg"]
 
-    useEffect(()=>{
-        if (width < 786){
-            setImages(smallImages)
-        }
-        else{
-            setImages(largeImages)
-        }
-    },[width, largeImages, smallImages])
-
+    var images;
+    if (width < 786){
+        images = smallImages
+    }
+    else{
+        images = largeImages
+    }
 
 
     if (width < 786){
