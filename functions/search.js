@@ -13,6 +13,6 @@ exports.handler = async (event,context,callback) => {
       }
     };
     request(options, function (error, response, body) {
-      return callback(null, {body: JSON.parse(body)})
+      return callback({body: JSON.parse(body)})
     });
     }
