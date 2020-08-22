@@ -11,7 +11,7 @@ exports.handler = (event,context,callback) => {
       }
     };
 
-    await request(options, function (error, response, body) {
+    request(options, function (error, response, body) {
       if (error) throw new Error(error);
     
       callback(body);
