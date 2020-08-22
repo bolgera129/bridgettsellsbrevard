@@ -12,10 +12,7 @@ exports.handler = async (event,context,callback) => {
         useQueryString: true
       }
     };
-    var result;
-    await request(options, function (error, response, body) {
-      result = JSON.parse(body)
+    request(options, function (error, response, body) {
+      return callback(JSON.parse(body))
     });
-    console.log(result)
-    return result
     }
