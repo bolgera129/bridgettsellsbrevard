@@ -48,6 +48,7 @@ export default function SearchForm(){
             },
             body: JSON.stringify({url : forSaleUrl})
         })
+        .then(data => data.json())
         .then(r => {
             console.log(r)
             if (r.properties.length > 0 ){setProperties(r.properties)}
