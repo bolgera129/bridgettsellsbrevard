@@ -78,8 +78,8 @@ export default function SearchForm(){
       }
     const menu = (
 <Grid container item fullWidth onClick={handleMenuClick} style = {{backgroundColor :"white"}}>
-                                <Grid item lg = {6}> 
-                                <List component="nav">
+                                <Grid container item lg = {6} justify = 'center'> 
+                                <List>
 
                                 <Grid item lg = {12}>
                                 <div>
@@ -98,7 +98,7 @@ export default function SearchForm(){
                                         </Checkbox>
                                     </Grid>
                                     <Divider/>
-                                    <Grid item lg = {12}>
+                                    <Grid item lg = {12} container justify = 'center'>
                                         <Checkbox
                                             checked={minPrice === "100000"}
                                             name="100k"
@@ -124,7 +124,7 @@ export default function SearchForm(){
                                         </Grid>      
                                         <Divider/>
 
-                                        <Grid item lg = {12}>
+                                        <Grid  item lg = {12} justify>
                                         <Checkbox
                                             checked={minPrice === "300000"}
                                             name="300k"
