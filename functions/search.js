@@ -16,6 +16,7 @@ exports.handler = async (event,context,callback) => {
       }
     })
     .then(res => {
+      console.log(res)
       callback(null, {
         statusCode: 200,
         headers: {
