@@ -17,7 +17,8 @@ exports.handler = async (event,context,callback) => {
     body.json()
     callback (null, {
     headers: {
-      'Content-Type': 'application/json'
+      "Access-Control-Allow-Origin" : "*", 
+      "Access-Control-Allow-Credentials" : true 
     },
     statusCode: 200, 
     body: body})
