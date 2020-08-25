@@ -13,6 +13,9 @@ exports.handler = async (event,context,callback) => {
       }
     };
   request(options, function (error, response, body) {
+    result = JSON.parse(body)
+    console.log(result)
+    console.log(body)
     callback(null, {
       statusCode: 200,
       headers: {
@@ -20,7 +23,7 @@ exports.handler = async (event,context,callback) => {
         'Access-Control-Allow-Headers':
           'Origin, X-Requested-With, Content-Type, Accept'
       },
-      body: JSON.stringify(body)
+      body: JSON.stringify(result)
     });
   })
 }
