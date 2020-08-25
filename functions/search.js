@@ -9,11 +9,11 @@ exports.handler = async (event,context,callback) => {
 
     await axios({
       "method":"GET",
-      "url":"https://realtor.p.rapidapi.com/properties/v2/list-for-sale",
+      "url":body.url,
       "headers":{
       'Content-Type': 'application/json',
       "x-rapidapi-host":"realtor.p.rapidapi.com",
-      "x-rapidapi-key":"558cb1cf59msh3a3c8e6217dc657p19a4aejsn03e0b4658960",
+      "x-rapidapi-key":process.env.REACT_APP_API_KEY,
       "useQueryString":true
       },"params":{
         "sort":"relevance",
@@ -24,8 +24,6 @@ exports.handler = async (event,context,callback) => {
         }
       })
     .then(res => {
-      console.log(res.data)
-      console.log(body.url)
       callback(null, {
         statusCode: 200,
         headers: {
