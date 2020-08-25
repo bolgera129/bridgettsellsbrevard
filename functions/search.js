@@ -13,14 +13,14 @@ exports.handler = async (event,context,callback) => {
       }
     };
   request(options, function (error, response, body) {
-    console.log(body)
-    body.json()
-    callback (null, {
-    headers: {
-      "Access-Control-Allow-Origin" : "*", 
-      "Access-Control-Allow-Credentials" : true 
-    },
-    statusCode: 200, 
-    body: body})
+    callback(null, {
+      statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers':
+          'Origin, X-Requested-With, Content-Type, Accept'
+      },
+      body: JSON.stringify(body)
+    });
   })
 }
