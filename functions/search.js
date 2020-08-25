@@ -24,7 +24,7 @@ exports.handler = async (event,context,callback) => {
         }
       })
     .then(res => {
-      console.log(res)
+      console.log(res.data)
       console.log(body.url)
       callback(null, {
         statusCode: 200,
@@ -33,7 +33,7 @@ exports.handler = async (event,context,callback) => {
           'Access-Control-Allow-Headers':
             'Origin, X-Requested-With, Content-Type, Accept'
         },
-        body: JSON.stringify(body)
+        body: JSON.stringify(res.data)
       })
     })
     .catch(err => console.log(err))
