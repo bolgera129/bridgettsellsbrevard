@@ -26,7 +26,7 @@ exports.handler = async (event,context,callback) => {
     .then(res => {
       console.log(res)
       console.log(body.url)
-      callback(null, {
+      await callback(null, {
         statusCode: 200,
         headers: {
           'Access-Control-Allow-Origin': '*',
