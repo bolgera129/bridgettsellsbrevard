@@ -13,6 +13,6 @@ exports.handler = async (event,context,callback) => {
       }
     };
   request(options, function (error, response, body) {
-    callback (null, {statusCode: 200, body: body})
+    callback (null, JSON.stringify({statusCode: 200, body: body}))
   })
 }
