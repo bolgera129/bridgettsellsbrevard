@@ -13,7 +13,7 @@ exports.handler = async (event,context,callback) => {
       "headers":{
       "content-type":"application/octet-stream",
       "x-rapidapi-host":"realtor.p.rapidapi.com",
-      "x-rapidapi-key":process.env.REACT_APP_API_KEY,
+      "x-rapidapi-key":"558cb1cf59msh3a3c8e6217dc657p19a4aejsn03e0b4658960",
       "useQueryString":true
       },"params":{
         "sort":"relevance",
