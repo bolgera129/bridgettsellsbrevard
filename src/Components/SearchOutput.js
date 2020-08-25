@@ -70,7 +70,7 @@ export default function SearchOutput(props){
                         </Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                        <small className="text-muted">Square Footage : {p.building_size}, </small>
+                        <small className="text-muted">Square Footage : {p.building_size.size}, </small>
                         <small className="text-muted">Bedrooms : {p.beds}, </small>
                         <small className="text-muted">Baths : {p.baths} </small>
                         </Card.Footer>
