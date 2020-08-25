@@ -15,7 +15,7 @@ exports.handler = async (event,context,callback) => {
       "useQueryString":true
       }
     })
-    .then(
+    .then(res => {
       callback(null, {
         statusCode: 200,
         headers: {
@@ -23,7 +23,7 @@ exports.handler = async (event,context,callback) => {
           'Access-Control-Allow-Headers':
             'Origin, X-Requested-With, Content-Type, Accept'
         },
-        body: JSON.stringify(body)
+        body: JSON.stringify(res)
       })
-    )
+    })
 }
