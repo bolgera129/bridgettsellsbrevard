@@ -77,7 +77,7 @@ export default function SearchForm(){
         setVisible(flag)
       }
     const menu = (
-<Grid container item fullWidth onClick={handleMenuClick}>
+<Grid container item fullWidth onClick={handleMenuClick} style = {{backgroundColor :"white"}}>
                                 <Grid container item lg = {6}> 
                                 <List component="nav">
 
@@ -352,7 +352,7 @@ export default function SearchForm(){
                 </Grid>              
                 </Grid>
          
-                    <Button onClick = {fetchProperties} variant = "outline-dark" size = "large" loading = {properties.length === 0 && clicked} style = {{marginTop : "30px"}}>
+                    <Button onClick = {fetchProperties} variant = "outline-dark" size = "large" loading = {properties.length === 0 && clicked} style = {{marginTop : "30px", marginBottom : "30px"}}>
                         Search
                     </Button>               
             </Container>
