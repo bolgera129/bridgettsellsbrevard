@@ -11,7 +11,7 @@ exports.handler = async (event,context,callback) => {
       "method":"GET",
       "url":"https://realtor.p.rapidapi.com/properties/v2/list-for-sale",
       "headers":{
-      "content-type":"application/octet-stream",
+      'Content-Type': 'application/json',
       "x-rapidapi-host":"realtor.p.rapidapi.com",
       "x-rapidapi-key":"558cb1cf59msh3a3c8e6217dc657p19a4aejsn03e0b4658960",
       "useQueryString":true
