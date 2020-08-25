@@ -30,7 +30,7 @@ export default function SearchForm(){
     const { Option } = Select;
 
 
-    function fetchProperties(props){    
+    async function fetchProperties(props){    
 
         setClicked(true)
         var max; 
@@ -41,7 +41,7 @@ export default function SearchForm(){
 
         const forSaleUrl = "https://realtor.p.rapidapi.com/properties/v2/list-for-sale?sort=relavance&city=" + city + "&limit=200&state_code=FL&sqft_min=" + footage[0] + "&baths_min=" + bath + "&beds_min=" + bedrooms + "&features=" + features + "&price_min=" + minPrice + max + "&prop_type=" + type + "&sqft_max=" + footage[1];
        
-        fetch('https://www.bridgettsellsbrevard.com/.netlify/functions/search',{
+        await fetch('https://www.bridgettsellsbrevard.com/.netlify/functions/search',{
             method : 'POST',
             headers: {
               'Content-Type': 'application/json'
