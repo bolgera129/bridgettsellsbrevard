@@ -15,6 +15,11 @@ exports.handler = async (event,context,callback) => {
   request(options, function (error, response, body) {
     console.log(body)
     body.json()
-    callback (JSON.stringify({statusCode: 200, body: body}))
+    callback (null, {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    statusCode: 200, 
+    body: body})
   })
 }
