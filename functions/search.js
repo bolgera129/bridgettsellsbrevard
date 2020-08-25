@@ -7,7 +7,7 @@ exports.handler = async (event,context,callback) => {
   const body = JSON.parse(event.body)
   console.log(body.url)
 
-    axios({
+    await axios({
       "method":"GET",
       "url":"https://realtor.p.rapidapi.com/properties/v2/list-for-sale",
       "headers":{
@@ -26,7 +26,7 @@ exports.handler = async (event,context,callback) => {
     .then(res => {
       console.log(res)
       console.log(body.url)
-      await callback(null, {
+      callback(null, {
         statusCode: 200,
         headers: {
           'Access-Control-Allow-Origin': '*',
