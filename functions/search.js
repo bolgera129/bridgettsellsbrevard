@@ -14,6 +14,8 @@ exports.handler = async (event,context,callback) => {
     };
     request(options, function (error, response, body) {
       console.log(JSON.parse(body))
-      return callback(JSON.stringify(body))
+      return callback(null, {
+        body : JSON.stringify(JSON.parse(body))
+      })
     });
     }
