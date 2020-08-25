@@ -10,9 +10,6 @@ function App() {
   return (
       <Router basename = {process.env.PUBLIC_URL}>
           <main className = "marginBot20">
-            <audio
-                src="song.wav" type = "audio/wav" autoPlay loop>
-            </audio>
             {
               <Switch>
                 <Route path = "/home">

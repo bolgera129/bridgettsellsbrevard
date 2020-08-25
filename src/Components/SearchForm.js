@@ -78,7 +78,7 @@ export default function SearchForm(){
       }
     const menu = (
 <Grid container item fullWidth onClick={handleMenuClick} style = {{backgroundColor :"white"}}>
-                                <Grid container item lg = {6}> 
+                                <Grid item lg = {6}> 
                                 <List component="nav">
 
                                 <Grid item lg = {12}>
