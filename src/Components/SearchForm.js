@@ -47,7 +47,7 @@ export default function SearchForm(){
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({url : forSaleUrl})
-        }).json()
+        })
         .then(data => data.json())
         .then(r => {
             console.log(r)
