@@ -18,9 +18,6 @@ function App() {
                 <Route path = "/home">
                   <Home />
                 </Route>
-                {/* <Route path = "/resources">
-                  <Resources />
-                </Route> */}
                 <Route path = "/search">
                   <SearchForm/>
                 </Route>
