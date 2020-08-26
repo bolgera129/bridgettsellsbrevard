@@ -30,6 +30,7 @@ export default function NavBar(props){
     
     return(
       <div>
+
         <Navbar bg={ (scroll && bgcolor) ? "transparent" : "light"} fixed = "top" className = {css.navCont} collapseOnSelect expand="lg">
           <Navbar.Brand href="/">   <Image src={publicUrl((scroll && bgcolor) ? "/assets/coastal_life.jpg" : "/assets/coastal_life_color.jpg")} className = {css.logo}/> </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" className = { css.toggler }/> 
