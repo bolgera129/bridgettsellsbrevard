@@ -12,6 +12,7 @@ import 'antd/dist/antd.css';
 
 
 export default function Home(props){
+    console.log('home')
 
     const { height, width } = useWindowDimensions();
 

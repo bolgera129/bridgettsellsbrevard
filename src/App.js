@@ -9,6 +9,10 @@ function App() {
   require('dotenv').config()
   return (
       <Router basename = {process.env.PUBLIC_URL}>
+        <iframe src="song.wav" allow="autoplay" id="audio" title = 'audio' style = {{display: 'none'}}></iframe>
+        <audio
+          src="song.wav" type = "audio/wav" autoPlay loop id = 'playAudio'>
+        </audio>
           <main className = "marginBot20">
             {
               <Switch>
