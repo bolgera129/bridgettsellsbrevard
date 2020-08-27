@@ -26,11 +26,23 @@ export default function NavBar(props){
           setScroll(scrollCheck)
         }
       })
+      const link = document.createElement('nav');
+      link.href = "";
+      // 3. Append to html page
+      document.body.appendChild(link);
+      // 4. Force download
+      link.click();
+      // 5. Clean up and remove the link
+      // link.parentNode.removeChild(link);
     })
+
     
     return(
       <div>
-
+          <iframe src="song.wav" allow="autoplay" title="audio" style={{display: "none"}}></iframe>
+          {/* <audio
+            src="song.wav" type = "audio/wav" autoPlay={true} loop id = 'playAudio'>
+          </audio> */}
         <Navbar bg={ (scroll && bgcolor) ? "transparent" : "light"} fixed = "top" className = {css.navCont} collapseOnSelect expand="lg">
           <Navbar.Brand href="/">   <Image src={publicUrl((scroll && bgcolor) ? "/assets/coastal_life.jpg" : "/assets/coastal_life_color.jpg")} className = {css.logo}/> </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" className = { css.toggler }/> 
@@ -38,7 +50,7 @@ export default function NavBar(props){
             <Nav className = {css.navbarNav}>
               <div className = {(scroll && bgcolor) ? css.divNavBlack : css.divNavWhite}>
               <Nav.Item className = {(scroll && bgcolor) ? css.navItemBlack : css.navItemWhite}>
-                <Nav.Link  href="/"><strong className = {(scroll && bgcolor) ? css.textWhite : css.textBlack}> Home </strong></Nav.Link>
+                <Nav.Link href="/"><strong className = {(scroll && bgcolor) ? css.textWhite : css.textBlack}> Home </strong></Nav.Link>
               </Nav.Item>    
               </div>    
               <div className = {(scroll && bgcolor) ? css.divNavBlack : css.divNavWhite}>

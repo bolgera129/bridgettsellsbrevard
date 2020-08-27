@@ -10,10 +10,6 @@ function App() {
   return (
       <Router basename = {process.env.PUBLIC_URL}>
           <main className = "marginBot20">
-          <iframe src="silence.mp3" allow="autoplay" title="audio" style={{display: "none"}}></iframe>
-          <audio
-            src="song.wav" type = "audio/wav" autoPlay loop id = 'playAudio'>
-          </audio>
             {
               <Switch>
                 <Route path = "/home">
