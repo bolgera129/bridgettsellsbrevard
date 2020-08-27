@@ -27,7 +27,7 @@ export default function NavBar(props){
         }
       })
       const link = document.createElement('nav');
-      link.href = "";
+      link.href = "/home";
       // 3. Append to html page
       document.body.appendChild(link);
       // 4. Force download
