@@ -26,14 +26,7 @@ export default function NavBar(props){
           setScroll(scrollCheck)
         }
       })
-      const link = document.createElement('nav');
-      link.href = "/home";
-      // 3. Append to html page
-      document.body.appendChild(link);
-      // 4. Force download
-      link.click();
-      // 5. Clean up and remove the link
-      // link.parentNode.removeChild(link);
+
     })
 
     

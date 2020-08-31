@@ -1,11 +1,13 @@
 import React, { useState } from "react"
 import NavBar from "./NavBar"
 import css from "./Home.module.css"
-import Card from "react-bootstrap/Card"
 import AboutMe from "./AboutMe"
 import useWindowDimensions from "../Utils/windowDimensions"
 import "./Billy_Ohio.ttf"
 import {Button} from "antd"
+import CrossfadeImage from 'react-crossfade-image'
+import LazyLoad from 'react-lazyload';
+
 
 import 'antd/dist/antd.css';
 
@@ -39,19 +41,21 @@ export default function Home(props){
 
 
     if (width < 786){
-        setTimeout(function(){ changeIndex(index) }, 3000);
+        setTimeout(function(){ changeIndex(index) }, 3500);
     }
     else{
-        setTimeout(function(){ changeIndex(index) }, 3000);
+        setTimeout(function(){ changeIndex(index) }, 3500);
     }
     
 
     return(
         <div className = {css.mainCont}>
-            <Card id = "#container">
-                <Card.Img src={images[index]} height = {height} width = {width} fluid/>
-                <Card.ImgOverlay className = {css.headerImg}>
-                    <NavBar bg = "false"/>  
+            <NavBar bg = "false"/>  
+        <div>
+            <LazyLoad height = {height} width = {width}>
+                <CrossfadeImage src = {images[index]}   alt = "homepage"/>
+            </LazyLoad>
+           <div className = {css.overlay} >
                         <div className = {css.overlayTitle}>
                             Love Where You Live
                             {/* <Typewriter
@@ -68,8 +72,9 @@ export default function Home(props){
                         <Button shape="circle" className = {css.bubbleR} ghost href = "/assets/sellerbook.pdf">
                             Sellers
                         </Button>
-                </Card.ImgOverlay>
-            </Card>
+           </div>
+        </div>
+                    
             <AboutMe/>
         </div>
     )

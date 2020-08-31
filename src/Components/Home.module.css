@@ -26,8 +26,8 @@
   .overlayTitle{
     position: absolute;
     color: white;
-    left: 0%;
-    top: 35%;
+    left: 25%;
+    top: 50%;
     font-weight: bolder;
     font-family: 'BillyOhio';
     width: 95%;
@@ -85,14 +85,14 @@
         position: absolute;
         color: white;
         text-align: center;
-        top: 5%;
+        top: -60%;
         justify-content: center;
-        left: -0%;
+        left: -10%;
         right: 0%;
         font-weight: 100;
         font-family: 'BillyOhio';
         font-size: 175px;
-        width: 100%;
+        width: max-content;
     }
     .bubble{
         width: 300px;
@@ -149,3 +149,21 @@
     /* animation-iteration-count: 4; */
 }
 
+.overlay{
+    position: absolute;
+    top: 35%;
+    left: 22%;
+    z-index: 2;
+    color: white;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 150px;
+    font-weight: bolder;
+}
+
+.screen{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
