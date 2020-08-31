@@ -53,7 +53,7 @@ export default function Home(props){
             <NavBar bg = "false"/>  
         <div>
             <LazyLoad height = {height} width = {width} once>
-                <Image src = {images[index]}   alt = "homepage"/>
+                <Image src = {images[index]}   alt = "homepage" height = {height} width = {width}/>
             </LazyLoad>
            <div className = {css.overlay} >
                         <div className = {css.overlayTitle}>
