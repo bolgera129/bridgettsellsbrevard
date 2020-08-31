@@ -99,8 +99,8 @@
         height: 300px !important;
         font-family: "BillyOhio";
         position: relative;
-        top: 500px;
-        left: -400px;
+        top: 200px;
+        left: -300px;
         opacity: 1;
         background-color: transparent;
     
@@ -116,8 +116,8 @@
         height: 300px !important;
         font-family: "BillyOhio";
         position: relative;
-        top: 500px;
-        right: -400px;
+        top: 200px;
+        right: -500px;
         opacity: 1;
         background-color: transparent;
     }
