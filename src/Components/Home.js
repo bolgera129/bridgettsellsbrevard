@@ -52,9 +52,7 @@ export default function Home(props){
         <div className = {css.mainCont}>
             <NavBar bg = "false"/>  
         <div>
-            <LazyLoad height = {height} width = {width}>
                 <CrossfadeImage src = {images[index]}   alt = "homepage"/>
-            </LazyLoad>
            <div className = {css.overlay} >
                         <div className = {css.overlayTitle}>
                             Love Where You Live
