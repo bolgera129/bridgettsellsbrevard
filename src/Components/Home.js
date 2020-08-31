@@ -5,9 +5,9 @@ import AboutMe from "./AboutMe"
 import useWindowDimensions from "../Utils/windowDimensions"
 import "./Billy_Ohio.ttf"
 import {Button} from "antd"
-import CrossfadeImage from 'react-crossfade-image'
+// import CrossfadeImage from 'react-crossfade-image'
 import LazyLoad from 'react-lazyload';
-
+import {Image} from "react-bootstrap"
 
 import 'antd/dist/antd.css';
 
@@ -53,7 +53,7 @@ export default function Home(props){
             <NavBar bg = "false"/>  
         <div>
             <LazyLoad height = {height} width = {width} once>
-                <CrossfadeImage src = {images[index]}   alt = "homepage"/>
+                <Image src = {images[index]}   alt = "homepage"/>
             </LazyLoad>
            <div className = {css.overlay} >
                         <div className = {css.overlayTitle}>
