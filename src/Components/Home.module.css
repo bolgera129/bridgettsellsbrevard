@@ -26,8 +26,8 @@
   .overlayTitle{
     position: absolute;
     color: white;
-    left: 25%;
-    top: 50%;
+    left: -12%;
+    top: 20%;
     font-weight: bolder;
     font-family: 'BillyOhio';
     width: 95%;
@@ -39,8 +39,8 @@
     height: 150px !important;
     font-family: "BillyOhio";
     position: relative;
-    top: 500px;
-    right: 40px;
+    top: 300px;
+    right: 150px;
     opacity: 1;
     z-index: 2;
 
@@ -57,9 +57,9 @@
     height: 150px !important;
     font-family: "BillyOhio";
     position: relative;
-    top:500px;
+    top:75px;
     opacity: 1;
-    left:40px;
+    left:68px;
     z-index: 2;
 }
 
@@ -161,9 +161,9 @@
 }
 
 .screen{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)) !important;
     z-index: 1;
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 0 !important;
+    right: 0 !important;
 }

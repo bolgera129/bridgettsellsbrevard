@@ -52,6 +52,7 @@ export default function Home(props){
         <div className = {css.mainCont}>
             <NavBar bg = "false"/>  
         <div>
+        <img width = {width} height = {height} className = {css.screen} alt = ''/>
             <LazyLoad height = {height} width = {width} once>
                 <Image src = {images[index]}   alt = "homepage" height = {height} width = {width}/>
             </LazyLoad>
