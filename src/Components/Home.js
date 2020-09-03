@@ -56,7 +56,7 @@ export default function Home(props){
             <LazyLoad height = {height} width = {width} once>
                 <Image src = {images[index]}   alt = "homepage" height = {height} width = {width}/>
             </LazyLoad>
-           <div className = {css.overlay} >
+           <div className = {css.overlay} style = {{width: '100%', height: '100%', left:'0px',top: '0px'}}>
                         <div className = {css.overlayTitle}>
                             Love Where You Live
                             {/* <Typewriter
@@ -67,12 +67,14 @@ export default function Home(props){
                                 }}
                             /> */}
                         </div>
+                        <div style = {{width: '100%', height: '100%', left:'0px',top: '0px'}}>
                         <Button shape="circle" className = {css.bubble} ghost href = "/assets/buyerbook.pdf">
                             Buyers
                         </Button>
                         <Button shape="circle" className = {css.bubbleR} ghost href = "/assets/sellerbook.pdf">
                             Sellers
-                        </Button>
+                        </Button>                            
+                        </div>
            </div>
         </div>
                     
