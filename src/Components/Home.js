@@ -29,7 +29,7 @@ export default function Home(props){
         }
     }
     const largeImages = ["/assets/lg2.jpg", "/assets/lg1.jpg", "/assets/lg3.jpg", "/assets/lg4.jpg", '/assets/lg5.jpg']
-    const smallImages = ["/assets/sm1.jpg", "/assets/sm2.jpg", "/assets/sm3.jpg","/assets/sm4.jpg", "/assets/sm5.jpg"]
+    const smallImages = ["/assets/sm4.jpg", "/assets/sm2.jpg", "/assets/sm3.jpg","/assets/sm1.jpg", "/assets/sm5.jpg"]
 
     var images;
     if (width < 786){
