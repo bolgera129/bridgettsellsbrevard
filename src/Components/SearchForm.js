@@ -248,15 +248,23 @@ export default function SearchForm(){
                                     placeholder = "City"
                                     style ={{width : "100%"}}
                                     size="large"
+                                    listHeight = "500px"
                             >                                
-                                    <Option value = {"Melbourne"}> Melbourne</Option>
-                                    <Option value={"Merritt%20Island"}>Merritt Island</Option>
                                     <Option value={"Cocoa%20Beach"}>Cocoa Beach</Option>
+                                    <Option value ={"Cocoa"}>Cocoa</Option>
+                                    <Option value ={"Indialantic"}>Indialantic</Option>
+                                    <Option value ={"Indian%20Harbour%20Beach"}>Indian Harbour Beach</Option>
+                                    <Option value = {"Melbourne"}> Melbourne</Option>
+                                    <Option value ={"Melbourne%20Beach"}>Melbourne Beach</Option>
+                                    <Option value={"Merritt%20Island"}>Merritt Island</Option>
+                                    <Option value ={"Mims"}>Mims</Option>
+                                    <Option value ={"Palm%20Bay"}>Palm Bay</Option>
+                                    <Option value ={"Port%20Saint%20John"}>Port St. John</Option>
+                                    <Option value ={"Rockledge"}>Rockledge</Option>
                                     <Option value = {"Satellite%20Beach"}>Satellite Beach</Option>
                                     <Option value = {"Titusville"}>Titusville</Option>
-                                    <Option value ={"Mims"}>Mims</Option>
-                                    <Option value ={"Cocoa"}>Cocoa</Option>
-                                    <Option value ={"Rockledge"}>Rockledge</Option>
+                                    <Option value ={"Viera"}>Viera</Option>
+
                                 </Select>   
                 </Grid>
                 <Grid item lg = {3} xs = {12}>
