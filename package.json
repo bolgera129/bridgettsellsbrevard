@@ -16,7 +16,7 @@
     "animate.css": "^4.0.0",
     "animate.css-react": "^1.0.0",
     "antd": "^4.5.4",
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "dotenv": "^8.2.0",
     "firebase": "^7.14.2",
