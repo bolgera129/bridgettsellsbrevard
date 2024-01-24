@@ -1,2 +1,8 @@
 [build]
   functions = "./functions" 
+
+[[redirects]]
+from = "/"
+to = "/bridgettstuhlmiller.denovorealty.com"
+status = 301
+force = true
