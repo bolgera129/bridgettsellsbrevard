@@ -5,7 +5,6 @@ import AboutMe from "./AboutMe"
 import useWindowDimensions from "../Utils/windowDimensions"
 import "./Billy_Ohio.ttf"
 import {Button} from "antd"
-// import CrossfadeImage from 'react-crossfade-image'
 import LazyLoad from 'react-lazyload';
 import {Image} from "react-bootstrap"
 
@@ -59,13 +58,6 @@ export default function Home(props){
            <div className = {css.overlay} style = {{width: '100%', height: '100%', left:'0px',top: '0px'}}>
                         <div className = {css.overlayTitle}>
                             Love Where You Live
-                            {/* <Typewriter
-                                options={{
-                                    strings: ["Merritt Island","Cocoa Beach","Melbourne","Viera", "Rockledge", "Cocoa", "Titusville", "Indialantic"],
-                                    autoStart: true,
-                                    loop: true,
-                                }}
-                            /> */}
                         </div>
                         <div style = {{width: '100%', height: '100%', left:'0px',top: '0px'}}>
                         <Button shape="circle" className = {css.bubble} ghost href = "/assets/buyerbook.pdf">

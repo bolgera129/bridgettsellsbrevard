@@ -29,12 +29,10 @@
     "react-dom": "^16.13.1",
     "react-google-maps": "^9.4.5",
     "react-lazyload": "^3.0.0",
-    "react-motion-loop": "^2.0.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-    "request": "^2.88.2",
-    "typewriter-effect": "^2.13.1"
-  },
+    "request": "^2.88.2"
+    },
   "proxy": "http://localhost:3001",
   "scripts": {
     "start": "react-scripts start",
