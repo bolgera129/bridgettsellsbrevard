@@ -26,14 +26,8 @@ function App() {
 
             {
               <Switch>
-                <Route path = "/home">
-                  <Home />
-                </Route>
-                <Route path = "/search">
-                  <SearchForm/>
-                </Route>
                 <Route path = ""> 
-                  <Home/>
+                  <Redirect to="https://bridgettstuhlmiller.denovorealty.com/" />
                 </Route>
               </Switch>
             }        
